@@ -9,8 +9,8 @@ import java.util.Map;
 public class Reader {
 
 	/**
-	 * Recebe o nome do arquivo a ser lido, processa as informações e armazena em
-	 * uma estrutura de dados do tipo dicionario
+	 * Recebe o nome do arquivo a ser lido, e chama o Processor
+	 * Enviando linha por linha com o numero da linha tambem
 	 * 
 	 * @param filename
 	 */
