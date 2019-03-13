@@ -1,0 +1,8 @@
+#include <stdio.h>
+#include <math.h>
+
+int v_1;
+
+void main() {
+	print("Hello, %d", v_1);
+}
