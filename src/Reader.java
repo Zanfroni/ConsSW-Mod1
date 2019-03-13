@@ -1,4 +1,5 @@
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -14,38 +15,23 @@ public class Reader {
 	 * @param filename
 	 */
 	public static void readFile(String filename) {
-		Map<String, ArrayList<Integer>> map = new HashMap<>();
+		//Map<String, ArrayList<Integer>> map = new HashMap<>();
 		BufferedReader br = null;
 		try {
 			br = new BufferedReader(new FileReader(filename));
 			String sCurrentLine;
 			int line = 0;
 			while ((sCurrentLine = br.readLine()) != null) {
-				String[] split = sCurrentLine.split(" ");
-				for (int i = 0; i < split.length; i++) {
-					feedMap(split[i], line);
-				}
-				line++;
+				Processor.process(sCurrentLine, line+1);
 			}
+				line++;
+		} catch (FileNotFoundException e) {
+			System.out.println("Arquivo Inexistente");
+			e.printStackTrace();
 		} catch (IOException e) {
+			System.out.println("Erro generico de I/O");
 			e.printStackTrace();
 		}
-		// Retornar mapa lido 
-		
 	}
-	
-	/**
-	 * Método privado que alimenta o dicionario
-	 * 
-	 * @param identificador
-	 * @param line
-	 */
-	private static void feedMap(String identificador, int line) {
-		if (map.containsKey(identificador)) {
-			map.get(identificador).add(line);
-		} else {
-			map.put(identificador, new ArrayList<Integer>());
-		}
-	}
-	
 }
+
