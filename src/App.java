@@ -44,9 +44,6 @@ public class App {
 	}
 
 
-
-
-
 	/**
 	 * Escreve em um arquivo, de acordo com o dicionario
 	 * FALTA TERMINAR (INCOMPLETO)
