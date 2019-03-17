@@ -31,7 +31,7 @@ public class SingletonMapWords {
 	 * 
 	 * @return
 	 */
-	public Map<String, ArrayList<Integer>> getMap() {
+	public synchronized Map<String, ArrayList<Integer>> getMap() {
 		return theMap;
 	}
 

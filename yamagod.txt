@@ -1,8 +1,13 @@
-#include <stdio.h>
-#include <math.h>
-
-int v_1;
-
-void main() {
-	print("Hello, %d", v_1);
-}
+;4,
+	print("Hello,;
+void;
+v_1;;
+<math.h>;
+int;
+v_1);;
+main();
+<stdio.h>;
+#include;1,
+{;
+%d",;
+};

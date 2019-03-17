@@ -1,4 +1,5 @@
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -6,18 +7,23 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Reader {
+	
+	private Map<String, ArrayList<Integer>> mapIdentifiers;
+	
+	public Reader() {
+		mapIdentifiers = SingletonMapWords.getInstance().getMap();
+	}
 
 	/**
 	 * Recebe o nome do arquivo a ser lido, processa as informações e armazena em
 	 * uma estrutura de dados do tipo dicionario
 	 * 
-	 * @param filename
+	 * @param file
 	 */
-	public static void readFile(String filename) {
-		Map<String, ArrayList<Integer>> map = new HashMap<>();
+	public void readFile(File file) {
 		BufferedReader br = null;
 		try {
-			br = new BufferedReader(new FileReader(filename));
+			br = new BufferedReader(new FileReader(file));
 			String sCurrentLine;
 			int line = 0;
 			while ((sCurrentLine = br.readLine()) != null) {
@@ -29,9 +35,7 @@ public class Reader {
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
-		}
-		// Retornar mapa lido 
-		
+		}		
 	}
 	
 	/**
@@ -40,11 +44,11 @@ public class Reader {
 	 * @param identificador
 	 * @param line
 	 */
-	private static void feedMap(String identificador, int line) {
-		if (map.containsKey(identificador)) {
-			map.get(identificador).add(line);
+	private void feedMap(String identifier, int line) {
+		if (mapIdentifiers.containsKey(identifier)) {
+			mapIdentifiers.get(identifier).add(line);
 		} else {
-			map.put(identificador, new ArrayList<Integer>());
+			mapIdentifiers.put(identifier, new ArrayList<Integer>());
 		}
 	}
 	
