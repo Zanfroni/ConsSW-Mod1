@@ -1,7 +1,15 @@
+package app;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * This app is an exercise for the subject of Software Construction from PUCRS
+ * 
+ * @authors Gabriel Franzoni, Gabriel Paul, Israel Deorce, Luiza Pereira,
+ *          Gabriel Kurtz
+ *
+ */
 public class SingletonMapWords {
 
 	private static SingletonMapWords instance;
