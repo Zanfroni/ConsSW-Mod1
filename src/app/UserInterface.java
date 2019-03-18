@@ -16,6 +16,9 @@ public class UserInterface {
 		in = new Scanner(System.in);
 	}
 	
+	/**
+	 * Starts and tries to find the input file
+	 */
 	public void start() {
 		File fileIn = getFile();
 		Reader reader = new Reader();
@@ -28,6 +31,10 @@ public class UserInterface {
 		}
 	}
 
+	/**
+	 * Checks if input file exists in directory
+	 * @return
+	 */
 	private File getFile() {
 		System.out.println("Por favor, digite o nome do arquivo-texto de entrada: ");
 		boolean filenameIsValid = false;
@@ -43,8 +50,14 @@ public class UserInterface {
 		return file;
 	}
 	
+	/**
+	 * Creates the new output file
+	 * @param filename
+	 * @return
+	 */
 	private File makeFile(String filename) {
 		String newFilename = filename.replace(".txt", "-xref.txt");
 		return new File(newFilename);		
 	}
 }
+
